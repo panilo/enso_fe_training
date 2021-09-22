@@ -34,13 +34,21 @@ class ProductList extends React.Component {
 
   render() {
     const productList = this.products.map((product) => (
-      <li key={product.name}>
-        {product.name} - {product.price}€ <br />
-        {product.description}
-      </li>
+      <figure key={product.name}>
+        <img alt="This is a goose (I think)" src="/assets/circle.png" />
+        <figcaption>
+          {product.name} - {product.price}€ <br />
+          {product.description}
+        </figcaption>
+      </figure>
     ));
 
-    return <ul>{productList}</ul>;
+    return (
+      <div>
+        <h1>Product list</h1>
+        <ul>{productList}</ul>
+      </div>
+    );
   }
 }
 

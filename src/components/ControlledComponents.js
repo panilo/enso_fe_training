@@ -16,10 +16,13 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmission}>
-        <input type="text" name="name" placeholder="Name" />
-        <button type="submit">Send form</button>
-      </form>
+      <div>
+        <h1>Classic form</h1>
+        <form onSubmit={this.handleFormSubmission}>
+          <input type="text" name="name" placeholder="Name" />
+          <button type="submit">Send form</button>
+        </form>
+      </div>
     );
   }
 }
@@ -51,21 +54,28 @@ class ControlledForm extends React.Component {
   render() {
     return (
       <div>
-        <p>You inserted:</p>
-        <p>Name: {this.state.name}</p>
-        <p>Fruit: {this.state.preferredFruit}</p>
+        <h1>Controlled Form</h1>
+        <div class="highlight">
+          You inserted:
+          <br />
+          Name: {this.state.name}
+          <br />
+          Fruit: {this.state.preferredFruit}
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
+          <p>
+            <label>Name:</label>
+            <br />
             <input
               type="text"
               value={this.state.name}
               onChange={this.handleChange}
               name="name" // naming your form field can help during state update
             />
-          </label>
-          <label>
-            Preferred fruit:
+          </p>
+          <p>
+            <label>Preferred fruit:</label>
+            <br />
             <select
               value={this.state.preferredFruit}
               onChange={this.handleChange}
@@ -76,7 +86,7 @@ class ControlledForm extends React.Component {
               <option value="coconut">Coconut</option>
               <option value="mango">Mango</option>
             </select>
-          </label>
+          </p>
           <input type="submit" value="Submit" onClick={this.handleSubmit} />
         </form>
       </div>
