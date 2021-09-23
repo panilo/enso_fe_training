@@ -24,7 +24,7 @@ const simplElement = (
 // This ia more complicated element, it contains nested components
 const complexElement = (
   <div>
-    <div id="function-class-components" class="component-example">
+    <div id="function-class-components" className="component-example">
       <FunctionComponent name="folks" />
       <hr />
       <br />
