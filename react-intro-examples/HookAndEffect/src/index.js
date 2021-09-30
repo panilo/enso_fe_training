@@ -5,14 +5,14 @@ import { useContext, createContext, useState } from "react";
 // It will handle our global state and share the stateful logic with all children-context
 // components which will use this function
 function useHello() {
-  const [hello, setHello] = useState("World");
+  const [sayHello, setHello] = useState("World");
 
   const changeHelloTo = (event) => {
     let value = event.target.value;
     setHello(value);
   };
 
-  return { hello, changeHelloTo };
+  return { sayHello, changeHelloTo };
 }
 
 // This is a context creation: context will allow to provide a state for children component
@@ -35,7 +35,7 @@ function ProvideHello(props) {
 function Header() {
   const hello = useContext(helloContext);
 
-  return <h1>Hello {hello.hello}!</h1>;
+  return <h1>Hello {hello.sayHello}!</h1>;
 }
 
 function ChangeHello() {
