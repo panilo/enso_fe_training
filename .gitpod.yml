@@ -10,7 +10,7 @@ tasks:
       npm run start
 
   - name: Show MySql DBs
-    command: mysql -e "show databases;"
+    init: mysql -e "show databases;"
 image: # Specify the docker image to use in order to create the dev environment
   file: .gitpod.dockerfile # This is a path to our image file
 ports:
