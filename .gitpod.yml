@@ -5,5 +5,5 @@ tasks:
 
   - name: Start a project
     command: |
-      cd react-intro-examples
+      cd react-intro-examples/SimpleReactElement
       npm run start
