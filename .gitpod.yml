@@ -1,9 +1,10 @@
 tasks:
   - name: Install npm-run-all and install all the projects dependencies
     init: npm install
-    command: npm run install-all
+    command: npm run install-all && gp sync-done install-all-task # The name 'install-all-task' is arbitrary
 
   - name: Start a project
+    init: gp sync-await install-all-task # This will wait the install all task
     command: |
       cd react-intro-examples/SimpleReactElement
       npm run start
