@@ -1,0 +1,9 @@
+tasks:
+  - name: Install npm-run-all and install all the projects dependencies
+    init: npm install
+    command: npm run install-all
+
+  - name: Start a project
+    command: |
+      cd react-intro-examples
+      npm run start
